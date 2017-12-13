@@ -69,7 +69,8 @@ public class Automaton {
                 }
                 else if(reader.get() == '='){
                     imp();
-                }else{
+                }
+                else if(reader.get() != ')' || skCount == 0) {
                     System.out.println("Ошибка при попытке перейти к считыванию операции");
                     throw new Exception();
                 }
