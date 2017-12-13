@@ -9,7 +9,7 @@ public class LogicTree {
         int currLowPriority = 0;
         if(logStr.size()==2){
             if(logStr.get(0).type==Type.NOT){
-                return new Operand(null, add(new ArrayList<Element>(logStr.subList(1,2))), null, Type.NOT, null);
+                return new Operand(null, add(new ArrayList<>(logStr.subList(1,2))), null, Type.NOT, null);
             }
             else {
                 System.out.println("magick");
@@ -43,8 +43,8 @@ public class LogicTree {
                     }
                 }
             }
-            ArrayList<Element> logLeft=killScobka(new ArrayList<Element>(logStr.subList(0,currLowPriority)));
-            ArrayList<Element> logRight=killScobka(new ArrayList<Element>(logStr.subList(currLowPriority+1,logStr.size())));
+            ArrayList<Element> logLeft=killScobka(new ArrayList<>(logStr.subList(0,currLowPriority)));
+            ArrayList<Element> logRight=killScobka(new ArrayList<>(logStr.subList(currLowPriority+1,logStr.size())));
             return new Operand(null,add(logLeft),add(logRight),logStr.get(currLowPriority).type,null);
         }
     }
